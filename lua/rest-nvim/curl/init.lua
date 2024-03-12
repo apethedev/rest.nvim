@@ -83,7 +83,8 @@ M.get_or_create_buf = function()
     vim.api.nvim_buf_set_lines(existing_bufnr, 0, -1, false, {})
 
     -- Make sure the filetype of the buffer is httpResult so it will be highlighted
-    vim.api.nvim_set_option_value("ft", "httpResult", { buf = existing_bufnr })
+    -- vim.api.nvim_set_option_value("ft", "httpResult", { buf = existing_bufnr })
+    vim.api.nvim_set_option_value("ft", "json", { buf = existing_bufnr })
 
     return existing_bufnr
   end
