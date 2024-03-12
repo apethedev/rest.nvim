@@ -216,13 +216,14 @@ local function create_callback(curl_cmd, opts)
     end
 
     -- append response container
-    local buf_content = "#+RESPONSE\n"
+    -- local buf_content = "#+RESPONSE\n"
+    local buf_content = ""
     if utils.is_binary_content_type(content_type) then
       buf_content = buf_content .. "Binary answer"
     else
       buf_content = buf_content .. res.body
     end
-    buf_content = buf_content .. "\n#+END"
+    -- buf_content = buf_content .. "\n#+END"
 
     local lines = utils.split(buf_content, "\n")
 
