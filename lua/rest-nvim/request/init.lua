@@ -309,6 +309,7 @@ M.buf_get_request = function(bufnr, curpos)
     utils.move_cursor(bufnr, curpos[2], curpos[3])
   end
 
+  log.debug("M.buf_get_request END", headers)
   local req = {
     method = parsed_url.method,
     url = parsed_url.url,
