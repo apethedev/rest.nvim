@@ -193,6 +193,7 @@ rest.run_request = function(req, opts)
     end_line = result.end_line,
     script_str = result.script_str,
   }
+  log.debug(Opts.headers)
 
   if not opts.verbose then
     LastOpts = Opts
