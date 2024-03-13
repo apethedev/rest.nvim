@@ -22,6 +22,7 @@ end
 -- and then execute curl
 -- @param verbose toggles if only a dry run with preview should be executed (true = preview)
 rest.run = function(verbose)
+  log.debug("rest.run")
   local ok, result = backend.get_current_request()
   if not ok then
     log.error("Failed to run the http request:")
@@ -40,6 +41,7 @@ end
 --           1. keep_going boolean keep running even when last request failed
 --           2. verbose boolean
 rest.run_file = function(filename, opts)
+  log.debug("rest.run_file")
   log.info("Running file :" .. filename)
   opts = vim.tbl_deep_extend(
     "force", -- use value from rightmost map
