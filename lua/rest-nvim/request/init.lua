@@ -286,6 +286,7 @@ M.buf_get_request = function(bufnr, curpos)
   local parsed_url = parse_url(vim.fn.getline(start_line))
 
   local headers, headers_end = get_headers(bufnr, start_line, end_line)
+  log.debug("M.buf_get_request", headers)
 
   local curl_args, body_start = get_curl_args(bufnr, headers_end, end_line)
 
